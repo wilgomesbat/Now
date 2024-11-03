@@ -10,6 +10,5 @@ const outsideClick = (e) => {
   }
 };
 
-loginButton.addEventListener("click", openModal);
 closeButton.addEventListener("click", closeModal);
 window.addEventListener("click", outsideClick);
