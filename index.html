@@ -7,88 +7,123 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
 <header class="header">
-      <nav>
-        <ul>
-          <li>
-          </li>
-        </ul>
-      </nav>
-      <div class="header-content">
-        <img
-          src="https://i.ibb.co/37j2Tpg/1725494203154.png"
-          alt="Hulu"
-          class="logo"
-        />
-        <div class="header-text-1">Faça já o download do Now e aproveite quando
-          quiser.</div>
-        <div class="header-text-2">
-          © 2024 Aurea
-        </div>
-        <a href="https://od.lk/d/ODFfODMyNTY5ODFf/Now.apk" class="btn btn-cta">DOWNLOAD APK BETA</a>
-        <div class="legal-text">
-          *Disponível em breve na Playstore.
-        </div>
-      </div>
-    </header>
-    <section class="sub-header">
-      <div>
-        <h3>Dúvidas? Acesse o nosso servidor.</h3>
-      </div>
-      <div>
-        <a href="#" class="btn btn-outline">AJUDA</a>
-      </div>
-    </section>
+  <nav>
+    <ul>
+      <li></li>
+    </ul>
+  </nav>
+  <div class="header-content">
+    <img src="https://i.ibb.co/37j2Tpg/1725494203154.png" alt="Hulu" class="logo" />
+
+    <!-- Contagem regressiva substituindo o texto de download -->
+    <div id="countdown" class="header-text-1"></div>
+    
+    <div class="header-text-2">© 2024 Aurea</div>
+    
+    <!-- Botão de download oculto -->
+    <a href="https://od.lk/d/ODFfODMyNTY5ODFf/Now.apk" class="btn btn-cta" style="display: none;">DOWNLOAD APK BETA</a>
+    
+    <div class="legal-text">*Disponível em breve na Playstore.</div>
+  </div>
+</header>
+
+<section class="sub-header">
+  <div>
+    <h3>Dúvidas? Acesse o nosso servidor.</h3>
+  </div>
+  <div>
+    <!-- Botão de ajuda redirecionando para o Discord -->
+    <a href="https://discord.gg/72xRfnUj7C" class="btn btn-outline">AJUDA</a>
+  </div>
+</section>
+
 <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-lists">
-        <div class="social-icons">
-          <a href="#"
-            ><img
-              src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png"
-              alt=""
-          /></a>
-          <a href="#"
-            ><img
-              src="https://eduardosalerno.com.br/wp-content/uploads/2019/09/youtube-logo-white.png"
-              alt=""
-          /></a>
-          <a href="#"
-            ><img
-              src="https://troyredfern.com/wp-content/uploads/2021/04/new-instagram-logo-white-border-icon-png-large.png"
-              alt=""
-          /></a>
-        </div>
-      </div>
-    </footer>
-    <div class="modal">
-      <div class="modal-box">
-        <div class="modal-body">
-          <h3>Log In</h3>
-          <form>
-            <div class="form-control">
-              <label for="email">Email</label>
-              <input type="email" id="email" />
-            </div>
-            <div class="form-control">
-              <label for="password">Password</label>
-              <input type="password" id="password" />
-            </div>
-            <p><a href="#">Forgot your email or password</a></p>
-            <button class="btn btn-dark">Log In</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <p>Don't have an account? <a href="#">Start your free trial</a></p>
-        </div>
-        <img
-          class="close"
-          src="https://github.com/bradtraversy/hulu-webpage-clone/blob/main/img/close.svg?raw=true"
-          alt="close"
-        />
+  <div class="footer-container">
+    <div class="footer-lists">
+      <div class="social-icons">
+        <!-- Link do Instagram -->
+        <a href="https://www.instagram.com/nowaurea/profilecard/?igsh=MXZ3aGNxbDZ4NDE0eQ==" target="_blank">
+          <img src="https://troyredfern.com/wp-content/uploads/2021/04/new-instagram-logo-white-border-icon-png-large.png" alt="Instagram" />
+        </a>
+        <!-- Link do Discord -->
+        <a href="https://discord.gg/72xRfnUj7C" target="_blank">
+          <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png" alt="Discord" />
+        </a>
+        <a href="#">
+          <img src="https://eduardosalerno.com.br/wp-content/uploads/2019/09/youtube-logo-white.png" alt="YouTube" />
+        </a>
       </div>
     </div>
-  <script src="./script.js"></script>
+  </div>
+</footer>
+
+<div class="modal">
+  <div class="modal-box">
+    <div class="modal-body">
+      <h3>Log In</h3>
+      <form>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input type="email" id="email" />
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input type="password" id="password" />
+        </div>
+        <p><a href="#">Forgot your email or password</a></p>
+        <button class="btn btn-dark">Log In</button>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <p>Don't have an account? <a href="#">Start your free trial</a></p>
+    </div>
+    <img class="close" src="https://github.com/bradtraversy/hulu-webpage-clone/blob/main/img/close.svg?raw=true" alt="close" />
+  </div>
+</div>
+
+<script>
+  function startCountdown(days) {
+    const countdownElement = document.getElementById("countdown");
+    
+    // Verifica se há uma data de término armazenada no localStorage
+    let targetDate = localStorage.getItem("countdownEndDate");
+
+    // Se não houver, define uma nova data de término para 11 dias a partir de agora
+    if (!targetDate) {
+      targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + days);
+      localStorage.setItem("countdownEndDate", targetDate);
+    } else {
+      targetDate = new Date(targetDate);
+    }
+
+    // Atualiza a contagem regressiva
+    function updateCountdown() {
+      const now = new Date();
+      const timeLeft = targetDate - now;
+
+      if (timeLeft <= 0) {
+        countdownElement.textContent = "Agora disponível!";
+        localStorage.removeItem("countdownEndDate"); // Remove a data quando o tempo expira
+        return;
+      }
+
+      const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hoursLeft = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      countdownElement.textContent = `Disponível em ${daysLeft}d ${hoursLeft}h ${minutesLeft}m ${secondsLeft}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
+  // Iniciar contagem de 11 dias
+  startCountdown(11);
+</script>
+
 </body>
 </html>
