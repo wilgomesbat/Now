@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,15 +16,14 @@
   <div class="header-content">
     <img src="https://i.ibb.co/37j2Tpg/1725494203154.png" alt="Hulu" class="logo" />
 
-    <!-- Contagem regressiva substituindo o texto de download -->
-    <div id="countdown" class="header-text-1"></div>
-    
+    <div class="header-text-1">Faça o download do Now</div>
+
     <div class="header-text-2">© 2024 Aurea</div>
-    
-    <!-- Botão de download oculto -->
-    <a href="https://od.lk/d/ODFfODMyNTY5ODFf/Now.apk" class="btn btn-cta" style="display: none;">DOWNLOAD APK BETA</a>
-    
-    <div class="legal-text">*Disponível em breve na Playstore.</div>
+
+    <!-- Botão de download atualizado -->
+    <a href="https://od.lk/d/ODFfODMyNTY5ODFf/Now.apk" class="btn btn-cta">EM BREVE</a>
+
+    <div class="legal-text">versão beta</div>
   </div>
 </header>
 
@@ -81,49 +80,6 @@
     <img class="close" src="https://github.com/bradtraversy/hulu-webpage-clone/blob/main/img/close.svg?raw=true" alt="close" />
   </div>
 </div>
-
-<script>
-  function startCountdown(days) {
-    const countdownElement = document.getElementById("countdown");
-    
-    // Verifica se há uma data de término armazenada no localStorage
-    let targetDate = localStorage.getItem("countdownEndDate");
-
-    // Se não houver, define uma nova data de término para 11 dias a partir de agora
-    if (!targetDate) {
-      targetDate = new Date();
-      targetDate.setDate(targetDate.getDate() + days);
-      localStorage.setItem("countdownEndDate", targetDate);
-    } else {
-      targetDate = new Date(targetDate);
-    }
-
-    // Atualiza a contagem regressiva
-    function updateCountdown() {
-      const now = new Date();
-      const timeLeft = targetDate - now;
-
-      if (timeLeft <= 0) {
-        countdownElement.textContent = "Agora disponível!";
-        localStorage.removeItem("countdownEndDate"); // Remove a data quando o tempo expira
-        return;
-      }
-
-      const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hoursLeft = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-      countdownElement.textContent = `Disponível em ${daysLeft}d ${hoursLeft}h ${minutesLeft}m ${secondsLeft}s`;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  }
-
-  // Iniciar contagem de 11 dias
-  startCountdown(11);
-</script>
 
 </body>
 </html>
