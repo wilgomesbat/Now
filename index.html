@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/favnow.png" type="image/x-icon">
+
+    <title>Now</title>
+
+     <!-- Open Graph para links compartilhados -->
+  <meta property="og:title" content="Now - O streaming do metaverso." />
+  <meta property="og:image" content="https://i.ibb.co/WvpC6ssN/Design-sem-nome.png" />
+  <meta property="og:url" content="https://nowaurea.com.br" /> <!-- Troque pelo seu link real -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Now" />
+
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <ul>
+    <a href="https://www.instagram.com/nowaurea?utm_source=qr&igsh=MXBrbnpiYjA1emY5bg==" target="_blank" rel="noopener noreferrer">
+  <img src="img/instagram-svgrepo-com (1).svg" alt="Canal Now Áurea no YouTube" />
+</a>
+        </ul>
+      </nav>
+
+      <div class="header-content">
+        <img src="img/Novo projeto 1034 [9A92806].png" alt="Hulu" class="logo" />
+         
+<div class="header-text-1" id="demo"></div>
+
+<script>
+// Define a data para contagem regressiva
+var countDownDate = new Date("Aug 9, 2025 20:00:30").getTime();
+
+// Atualiza a contagem a cada segundo
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  document.getElementById("demo").innerHTML =
+    days + " dias " + hours + " horas ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "BAIXE JA!";
+  }
+}, 1000);
+</script>
+
+
+        <!-- SVG Filter for Glass Distortion -->
+<svg style="display: none">
+  <filter id="glass-distortion">
+    <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+  </filter>
+</svg>
+
+<button class="glass-button">
+  <div class="glass-filter"></div>
+  <div class="glass-overlay"></div>
+  <div class="glass-specular"></div>
+  <div class="glass-content">
+    <span>Em breve</span>
+  </div>
+</button>
+      </div>
+    </header>
+
+    <section class="sub-header">
+      <img src="img/logoparcer.png" alt="" />
+
+ <p class="texto-medium">
+  O Now é o principal hub de streaming do metaverso no Roblox, reunindo diversas comunidades em um só lugar.
+</p>
+<img class="imagem" src="img/cardpng.png" alt="Imagem do Now">
+
+
+
+      </div>
+    </section>
+
+
+
+    <section class="live-sports">
+      <div class="live-sports-content">
+        <div class="text-xl">Aurea</div>
+        <div class="sub-text">
+          Fique por dentro de tudo o que acontece no mundo com o conteúdo exclusivo da Aurea.
+        </div>
+      </div>
+    </section>
+
+     <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-lists">
+          <ul>
+            <li class="list-head">Ajuda</li>
+            <li><a href="#">Dispositivos compativeis</a></li>
+           <li><a href="termos.html">Termos</a></li>
+          </ul>
+        </div>
+        <div class="divider"></div>
+
+
+        <div class="social-icons">
+          <a href="https://www.instagram.com/nowaurea?utm_source=qr&igsh=MXBrbnpiYjA1emY5bg==" target="_blank" rel="noopener noreferrer">
+  <img src="img/instagram-svgrepo-com.svg" alt="Canal Now Áurea no YouTube" />
+</a>
+<a href="https://www.youtube.com/@nowaurea==" target="_blank" rel="noopener noreferrer">
+  <img src="img/youtube-svgrepo-com.svg" alt="Canal Now Áurea no YouTube" />
+</a>
+  <a href="https://discord.gg/72xRfnUj7C==" target="_blank" rel="noopener noreferrer">
+  <img src="img/discord-svgrepo-com.svg" alt="Canal Now Áurea no YouTube" />
+</a>
+       </div>
+      </div>
+    </footer>
+
+    <div class="modal">
+      <div class="modal-box">
+        <div class="modal-body">
+          <h3>Log In</h3>
+          <form>
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input type="email" id="email" />
+            </div>
+            <div class="form-control">
+              <label for="password">Password</label>
+              <input type="password" id="password" />
+            </div>
+            <p><a href="#">Forgot your email or password</a></p>
+            <button class="btn btn-dark">Log In</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p>Don't have an account? <a href="#">Start your free trial</a></p>
+        </div>
+        <img class="close" src="img/close.svg" alt="close" />
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
