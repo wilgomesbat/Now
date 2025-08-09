@@ -32,28 +32,6 @@
          
 <div class="header-text-1" id="demo"></div>
 
-<script>
-// Define a data para contagem regressiva
-var countDownDate = new Date("Aug 10, 2025 20:00:30").getTime();
-
-// Atualiza a contagem a cada segundo
-var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
-
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-  document.getElementById("demo").innerHTML =
-    days + " dias " + hours + " horas ";
-
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "BAIXE JA!";
-  }
-}, 1000);
-</script>
-
 
         <!-- SVG Filter for Glass Distortion -->
 <svg style="display: none">
